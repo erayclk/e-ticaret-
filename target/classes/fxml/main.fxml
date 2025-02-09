@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.ecommerce.controller.MainController"
+          prefHeight="600.0" prefWidth="800.0">
+          
+    <!-- Top Menu Bar -->
+    <top>
+        <MenuBar>
+            <Menu text="Dosya">
+                <MenuItem text="Çıkış" onAction="#handleExit"/>
+            </Menu>
+            <Menu text="Hesap">
+                <MenuItem text="Profil" onAction="#handleProfile"/>
+                <MenuItem text="Çıkış Yap" onAction="#handleLogout"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    
+    <!-- Left Side Navigation -->
+    <left>
+        <VBox spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+            <Button text="Ana Sayfa" onAction="#handleHome" maxWidth="Infinity"/>
+            <Button text="Ürünler" onAction="#handleProducts" maxWidth="Infinity"/>
+            <Button text="Sepetim" onAction="#handleCart" maxWidth="Infinity"/>
+            <Button text="Siparişlerim" onAction="#handleOrders" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+    
+    <!-- Main Content Area -->
+    <center>
+        <StackPane fx:id="contentArea">
+            <VBox alignment="CENTER" spacing="20">
+                <Text style="-fx-font-size: 24px;" text="Hoş Geldiniz"/>
+                <Text style="-fx-font-size: 16px;" text="Sol menüden istediğiniz işlemi seçebilirsiniz"/>
+            </VBox>
+        </StackPane>
+    </center>
+    
+    <!-- Status Bar -->
+    <bottom>
+        <HBox style="-fx-background-color: #e0e0e0; -fx-padding: 5;">
+            <Label fx:id="statusLabel" text="Hazır"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane> 

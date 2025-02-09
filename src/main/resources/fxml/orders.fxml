@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.ecommerce.controller.OrdersController"
+      spacing="20" style="-fx-padding: 20;">
+    
+    <HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 8;">
+        <Text style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Siparişlerim"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <ComboBox fx:id="filterComboBox" promptText="Filtrele"/>
+    </HBox>
+    
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background: transparent; -fx-background-color: transparent;">
+        <VBox fx:id="ordersContainer" spacing="10">
+            <!-- Siparişler buraya dinamik olarak eklenecek -->
+        </VBox>
+    </ScrollPane>
+    
+    <Label fx:id="emptyOrdersLabel" text="Henüz hiç siparişiniz bulunmuyor."
+           style="-fx-font-size: 16px; -fx-text-fill: #666666;"
+           visible="false"
+           alignment="CENTER"
+           maxWidth="Infinity"/>
+</VBox> 
